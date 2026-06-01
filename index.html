@@ -157,7 +157,7 @@
 
   function loadStage() {
     document.getElementById('stageDisplay').textContent = `${currentStage + 1} / ${quizData.length} 문제`;
-    document.getElementById('question-text').textContent = quizData[currentStage].text;
+    document.getElementById('question-text').innerHTML = quizData[currentStage].text;
     document.getElementById('formula').value = '';
     document.getElementById('message').style.display = 'none';
   }
