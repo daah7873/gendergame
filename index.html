@@ -75,10 +75,62 @@
   const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxYpofi4nR1GGrW4NPW51Srbd_6N1Lc3w-uFPeepoYw8mXtXwxL_SDrBz2qEpezK2Ie/exec";
   
   const quizData = [
-    { text: "2010년 남성 근로자 월평균 임금은 1,200달러, 2015년 남성 근로자 월평균 임금은 1500달러일 때 2010년 대비 2015년의 남성 근로자 월평균 임금 상승률은 몇 %인가?", answer: 25 },
-    { text: "t년에 (남성 정규직 근로자 평균 임금-여성 정규직 근로자 평균임금)*100/남성 정규직 근로자 평균 임금=20일 때 여성 정규직 근로자 평균 임금은 남성 정규직 근로자 평균 임금의 몇 %인가?", answer: 80 },
-    { text: "갑국의 t+10년 남성의 임금 수준을 100이라고 할 때 여성 임금 수준은 80이다. t+10년 남성의 임금이 120만 원일 때 여성의 임금은 몇 만 원인가?", answer: 96 }
+    { 
+      text: `
+        <div style="margin-bottom: 10px;">[2010년~2015년 남성 근로자 월평균 임금]</div>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; text-align: center; font-size: 1.1rem; background: white;">
+          <tr style="background: #e2e8f0;">
+            <th style="border: 1px solid #94a3b8; padding: 8px;">연도</th>
+            <th style="border: 1px solid #94a3b8; padding: 8px;">남성 근로자 월평균 임금</th>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #94a3b8; padding: 8px;">2010년</td>
+            <td style="border: 1px solid #94a3b8; padding: 8px; color: #2563eb; font-weight: bold;">1,200 달러</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #94a3b8; padding: 8px;">2015년</td>
+            <td style="border: 1px solid #94a3b8; padding: 8px; color: #ef4444; font-weight: bold;">1,500 달러</td>
+          </tr>
+        </table>
+        2010년 대비 2015년의 <b>남성 근로자 월평균 임금 상승률</b>은 몇 %인가?
+      `, 
+      answer: 25 
+    },
+    { 
+      text: `
+        t년에 다음과 같은 식이 성립한다고 할 때,<br><br>
+        <div style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin: 15px 0;">
+          <div style="text-align: center;">
+            <span style="border-bottom: 2px solid #334155; padding-bottom: 4px; display: block;">(남성 정규직 임금 - 여성 정규직 임금)</span>
+            <span style="padding-top: 4px; display: block;">남성 정규직 임금</span>
+          </div>
+          <span style="margin-left: 10px;">× 100 = <b>20</b></span>
+        </div><br>
+        여성 정규직 근로자 평균 임금은 남성 정규직 근로자 평균 임금의 몇 %인가?
+      `, 
+      answer: 80 
+    },
+    { 
+      text: `
+        <div style="margin-bottom: 10px;">[갑국의 t+10년 임금 지수]</div>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; text-align: center; font-size: 1.1rem; background: white;">
+          <tr style="background: #e2e8f0;">
+            <th style="border: 1px solid #94a3b8; padding: 8px;">성별</th>
+            <th style="border: 1px solid #94a3b8; padding: 8px;">남성</th>
+            <th style="border: 1px solid #94a3b8; padding: 8px;">여성</th>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #94a3b8; padding: 8px; font-weight: bold;">임금 수준</td>
+            <td style="border: 1px solid #94a3b8; padding: 8px;">100</td>
+            <td style="border: 1px solid #94a3b8; padding: 8px;">80</td>
+          </tr>
+        </table>
+        t+10년 남성의 임금이 <b>120만 원</b>일 때, 여성의 임금은 몇 만 원인가?
+      `, 
+      answer: 96 
+    }
   ];
+
   const numbers = [2, 3, 4, 5, 8, 10];
   
   let currentStage = 0;
