@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>비밀 숫자 연산 퍼즐</title>
+<title>사회탐구 비밀 연산 퍼즐</title>
 <style>
   body { font-family: 'Malgun Gothic', sans-serif; background-color: #f0f2f5; padding: 20px; display: flex; justify-content: center; }
   .container { background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 550px; width: 100%; text-align: center; }
@@ -16,7 +16,7 @@
   .header-info { display: flex; justify-content: space-between; align-items: center; background: #1e293b; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; }
   .stage-info { font-size: 1.2rem; background: #3b82f6; padding: 5px 15px; border-radius: 20px; }
   .timer { font-size: 1.5rem; color: #facc15; font-variant-numeric: tabular-nums; }
-  .question-box { background: #f8fafc; border: 2px dashed #94a3b8; padding: 20px; margin: 15px 0; border-radius: 8px; font-size: 1.2rem; font-weight: bold; color: #334155; word-break: keep-all; }
+  .question-box { background: #f8fafc; border: 2px dashed #94a3b8; padding: 20px; margin: 15px 0; border-radius: 8px; font-size: 1.1rem; font-weight: normal; color: #334155; word-break: keep-all; line-height: 1.5; text-align: left; }
   .badge { display: inline-block; background: #dbeafe; color: #1e3a8a; padding: 10px 15px; margin: 5px; border-radius: 8px; font-size: 1.3rem; font-weight: bold; }
   .input-area { display: flex; gap: 10px; margin-top: 15px; }
   input[type="text"].formula-input { flex-grow: 1; padding: 12px; font-size: 1.2rem; border: 2px solid #cbd5e1; border-radius: 6px; }
@@ -31,7 +31,7 @@
 <body>
 
 <div class="container">
-  <h1>비밀 숫자 퍼즐</h1>
+  <h1>사회탐구 연산 퍼즐</h1>
   <p class="subtitle">3문제를 가장 빨리 푸는 사람은 누구?</p>
 
   <div id="intro-screen">
@@ -46,9 +46,10 @@
       <div class="timer" id="timerDisplay">00:00</div>
     </div>
     
+    <!-- 여기가 문제 나오는 곳 -->
     <div class="question-box" id="question-text">문제 내용</div>
 
-    <h3 style="text-align: left; margin-bottom: 5px; font-size:1rem; color:#64748b;">사용 가능한 숫자 (최대 1번씩)</h3>
+    <h3 style="text-align: left; margin-bottom: 5px; margin-top: 20px; font-size:1rem; color:#64748b;">사용 가능한 숫자 (최대 1번씩)</h3>
     <div id="pool">
       <div class="badge">2</div><div class="badge">3</div><div class="badge">4</div>
       <div class="badge">5</div><div class="badge">8</div><div class="badge">10</div>
@@ -71,13 +72,13 @@
 </div>
 
 <script>
-  // ⭐️ 선생님의 진짜 주소를 따옴표 안에 넣어주세요! ⭐️
+  // ⭐️⭐️ 여기에 선생님의 주소를 다시 꼭 넣어주세요! ⭐️⭐️
   const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxYpofi4nR1GGrW4NPW51Srbd_6N1Lc3w-uFPeepoYw8mXtXwxL_SDrBz2qEpezK2Ie/exec";
   
   const quizData = [
     { 
       text: `
-        <div style="margin-bottom: 10px;">[2010년~2015년 남성 근로자 월평균 임금]</div>
+        <div style="font-weight: bold; margin-bottom: 10px;">[2010년~2015년 남성 근로자 월평균 임금]</div>
         <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; text-align: center; font-size: 1.1rem; background: white;">
           <tr style="background: #e2e8f0;">
             <th style="border: 1px solid #94a3b8; padding: 8px;">연도</th>
@@ -98,21 +99,21 @@
     },
     { 
       text: `
-        t년에 다음과 같은 식이 성립한다고 할 때,<br><br>
-        <div style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin: 15px 0;">
+        t년에 다음과 같은 식이 성립한다고 할 때,<br>
+        <div style="display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin: 20px 0; font-weight: bold;">
           <div style="text-align: center;">
             <span style="border-bottom: 2px solid #334155; padding-bottom: 4px; display: block;">(남성 정규직 임금 - 여성 정규직 임금)</span>
             <span style="padding-top: 4px; display: block;">남성 정규직 임금</span>
           </div>
-          <span style="margin-left: 10px;">× 100 = <b>20</b></span>
-        </div><br>
+          <span style="margin-left: 10px;">× 100 = <span style="color: #ea580c;">20</span></span>
+        </div>
         여성 정규직 근로자 평균 임금은 남성 정규직 근로자 평균 임금의 몇 %인가?
       `, 
       answer: 80 
     },
     { 
       text: `
-        <div style="margin-bottom: 10px;">[갑국의 t+10년 임금 지수]</div>
+        <div style="font-weight: bold; margin-bottom: 10px;">[갑국의 t+10년 임금 지수]</div>
         <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px; text-align: center; font-size: 1.1rem; background: white;">
           <tr style="background: #e2e8f0;">
             <th style="border: 1px solid #94a3b8; padding: 8px;">성별</th>
@@ -121,8 +122,8 @@
           </tr>
           <tr>
             <td style="border: 1px solid #94a3b8; padding: 8px; font-weight: bold;">임금 수준</td>
-            <td style="border: 1px solid #94a3b8; padding: 8px;">100</td>
-            <td style="border: 1px solid #94a3b8; padding: 8px;">80</td>
+            <td style="border: 1px solid #94a3b8; padding: 8px; color: #2563eb; font-weight: bold;">100</td>
+            <td style="border: 1px solid #94a3b8; padding: 8px; color: #ef4444; font-weight: bold;">80</td>
           </tr>
         </table>
         t+10년 남성의 임금이 <b>120만 원</b>일 때, 여성의 임금은 몇 만 원인가?
@@ -130,7 +131,6 @@
       answer: 96 
     }
   ];
-
   const numbers = [2, 3, 4, 5, 8, 10];
   
   let currentStage = 0;
@@ -157,7 +157,10 @@
 
   function loadStage() {
     document.getElementById('stageDisplay').textContent = `${currentStage + 1} / ${quizData.length} 문제`;
+    
+    // ⭐️⭐️ 여기가 마법의 키워드입니다! (textContent를 innerHTML로 바꿈) ⭐️⭐️
     document.getElementById('question-text').innerHTML = quizData[currentStage].text;
+    
     document.getElementById('formula').value = '';
     document.getElementById('message').style.display = 'none';
   }
@@ -201,9 +204,7 @@
     }
   }
 
-  // ⭐️ 백그라운드 스텔스 전송 (화면 멈춤, 에러 완벽 해결) ⭐️
   function finishGame() {
-    // 타이머 멈추고 게임 종료 화면 바로 띄우기!
     clearInterval(timerInterval);
     document.getElementById('game-screen').style.display = 'none';
     document.getElementById('finish-screen').style.display = 'block';
@@ -214,17 +215,11 @@
     
     document.getElementById('final-record').textContent = `[ ${studentName} ] 학생의 최종 기록: ${timeString}`;
     
-    // 주소 조립
     const sendUrl = `${WEB_APP_URL}?name=${encodeURIComponent(studentName)}&time=${encodeURIComponent(timeString)}&seconds=${secondsElapsed}`;
     
-    // 화면 전환 없이 데이터만 뒤로 조용히 쏘기! (no-cors 모드)
     fetch(sendUrl, { mode: 'no-cors' })
-      .then(function() {
-        console.log("엑셀 전송 완료!");
-      })
-      .catch(function(err) {
-        console.log("엑셀 전송 중 문제 발생:", err);
-      });
+      .then(function() { console.log("전송 완료"); })
+      .catch(function(err) { console.log("전송 에러", err); });
   }
 
   function showMsg(text, type) {
